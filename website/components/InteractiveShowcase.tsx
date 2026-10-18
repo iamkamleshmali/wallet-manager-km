@@ -286,7 +286,7 @@ export default function InteractiveShowcase() {
 
                     {/* Filter chips */}
                     <div className="flex gap-1.5 px-3 py-2 border-b text-[10px] font-bold border-slate-100 dark:border-slate-800">
-                      <span className="px-2 py-0.5 rounded-full bg-coral-600 text-white">All</span>
+                      <span className="px-2 py-0.5 rounded-full bg-coral-700 text-white">All</span>
                       <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Cash</span>
                       <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Bank UPI</span>
                       <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Card</span>

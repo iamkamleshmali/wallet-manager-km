@@ -177,7 +177,7 @@ export default function FeatureGrid() {
           </div>
           <a
             href="#screenshots"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-coral-600 hover:bg-coral-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-coral-700 hover:bg-coral-800 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
           >
             <span>See App Screenshots</span>
             <ArrowUpRight className="w-4 h-4" />
