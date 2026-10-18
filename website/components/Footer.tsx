@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Wallet,
   Download,
@@ -12,10 +13,8 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { useGitHubRelease } from "@/hooks/useGitHubRelease";
 import { triggerDownloadConfetti } from "@/lib/confetti";
-import PrivacyModal from "@/components/PrivacyModal";
 
 export default function Footer() {
-  const [privacyOpen, setPrivacyOpen] = useState(false);
   const { tagName, apkUrl, apkSizeMb } = useGitHubRelease();
 
   return (
@@ -124,12 +123,20 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => setPrivacyOpen(true)}
-                    className="hover:text-white transition-colors text-left"
+                  <Link
+                    href="/privacy"
+                    className="hover:text-white transition-colors"
                   >
                     Privacy Policy
-                  </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-white transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -176,14 +183,20 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-6">
-              <button
-                onClick={() => setPrivacyOpen(true)}
+              <Link
+                href="/privacy"
                 className="hover:text-slate-300 transition-colors"
               >
-                Privacy
-              </button>
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-slate-300 transition-colors"
+              >
+                Terms
+              </Link>
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-km"
+                href="https://github.com/iamkamleshmali/wallet-manager-app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-slate-300 transition-colors"
@@ -197,9 +210,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
-      {/* Privacy Policy Modal */}
-      <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </>
   );
 }
