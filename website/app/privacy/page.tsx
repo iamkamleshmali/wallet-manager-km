@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-            Effective Date: October 18, 2026 • Version 1.1
+            Last Updated: October 18, 2026 • Version 1.2
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc list-inside space-y-1.5 text-sm pl-2">
               <li><strong>Zero Cookies:</strong> We do not set tracking cookies or cross-site tracking identifiers. You do not need to accept a cookie banner because no tracking cookies exist.</li>
-              <li><strong>Privacy-Friendly Analytics:</strong> We use privacy-first Vercel Analytics, which collects aggregated metrics (page views, referrer, browser family) without collecting IP addresses, personal identifiers, or persistent device fingerprints.</li>
+              <li><strong>Privacy-Friendly Analytics:</strong> The website uses cookie-free, anonymous page-view analytics (Vercel Analytics). The hosting provider (Vercel) may process standard server logs (e.g. IP address, request timestamp) as part of securely serving and operating the site.</li>
               <li><strong>Local Storage:</strong> Your browser&apos;s local storage is used solely to remember your chosen theme (Light mode vs Dark mode).</li>
             </ul>
           </section>
