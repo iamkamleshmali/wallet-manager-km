@@ -21,7 +21,7 @@ export default function InstallationGuide() {
       title: "Download the APK File",
       description:
         "Click the 'Download Android APK' button. The official .apk package will be fetched directly from GitHub Releases.",
-      tip: "File size is only ~24.6 MB. Look for the download notification in your browser tray.",
+      tip: `File size is only ${apkSizeMb}. Look for the download notification in your browser tray.`,
       actionText: "Download APK",
       isDownload: true,
     },

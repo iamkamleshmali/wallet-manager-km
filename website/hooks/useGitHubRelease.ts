@@ -21,13 +21,13 @@ const GITHUB_OWNER = "iamkamleshmali";
 const GITHUB_REPO = "wallet-manager-app";
 
 const DEFAULT_RELEASE: GitHubReleaseInfo = {
-  tagName: "v1.0.36",
-  releaseName: "Wallet Manager v1.0.36 — Double-Entry Ledger & Cloud Sync",
+  tagName: "Latest",
+  releaseName: "Wallet Manager — Double-Entry Ledger & Cloud Sync",
   publishedAt: "Latest Stable",
   apkUrl: `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest/download/app-release.apk`,
   apkName: "app-release.apk",
-  apkSizeMb: "30.3 MB",
-  totalDownloads: 1420,
+  apkSizeMb: "~30 MB",
+  totalDownloads: 0,
   releaseNotes: "• Encrypted Google Drive AppData sync\n• SQLite local database export & import\n• Reinforced multi-account balance sheets\n• High-performance interactive donut statistics",
   htmlUrl: `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest`,
   isLoading: false,
@@ -68,9 +68,10 @@ export function useGitHubRelease() {
           asset.name?.toLowerCase().endsWith(".apk")
         );
 
+        // Compute decimal MB (bytes / 1,000,000) matching Android & Chrome download view
         const sizeInMb = apkAsset?.size
-          ? (apkAsset.size / (1024 * 1024)).toFixed(1) + " MB"
-          : "30.3 MB";
+          ? (apkAsset.size / 1_000_000).toFixed(1) + " MB"
+          : "~30 MB";
 
         const formattedDate = data.published_at
           ? new Date(data.published_at).toLocaleDateString("en-US", {
@@ -85,13 +86,13 @@ export function useGitHubRelease() {
             (acc: number, item: { download_count?: number }) =>
               acc + (item.download_count || 0),
             0
-          ) || 1420;
+          ) || (apkAsset?.download_count || 0);
 
-        const tagName = data.tag_name || "v1.0.36";
+        const tagName = data.tag_name || "Latest";
         const assetName = apkAsset?.name || "app-release.apk";
         const directApkUrl =
           apkAsset?.browser_download_url ||
-          `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/download/${tagName}/${assetName}`;
+          `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest/download/${assetName}`;
 
         setRelease({
           tagName: tagName,

@@ -161,7 +161,9 @@ export default function Hero() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-white/80">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300" />
-                Over {totalDownloads.toLocaleString()}+ verified downloads
+                {totalDownloads > 0
+                  ? `${totalDownloads.toLocaleString()} verified downloads`
+                  : "Verified release on GitHub"}
               </span>
               <span className="hidden sm:inline">•</span>
               <span>Updated: {publishedAt}</span>
