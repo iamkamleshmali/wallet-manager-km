@@ -59,10 +59,10 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-white mb-6 shadow-sm">
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Latest Android Release:</span>
-              <span className="bg-white text-coral-600 font-bold px-2 py-0.5 rounded-full text-[11px]">
+              <span className="bg-white text-coral-700 font-bold px-2 py-0.5 rounded-full text-[11px]">
                 {tagName}
               </span>
-              <span className="text-white/80 hidden sm:inline">• {apkSizeMb}</span>
+              <span className="text-white/90 hidden sm:inline">• {apkSizeMb}</span>
             </div>
 
             {/* Main Headline */}
@@ -74,7 +74,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-2xl mb-8 font-normal">
+            <p className="text-lg sm:text-xl text-white leading-relaxed max-w-2xl mb-8 font-normal">
               Double-entry bookkeeping, visual charts, receipt photo storage, and
               encrypted Google Drive auto-sync. Completely offline-first and 100%
               private — built for total peace of mind.
@@ -86,7 +86,7 @@ export default function Hero() {
                 <ShieldCheck className="w-5 h-5 text-emerald-300 flex-shrink-0" />
                 <div className="text-xs">
                   <div className="font-bold text-white">100% Private</div>
-                  <div className="text-white/80 text-[11px]">No Ads • No SMS Reading</div>
+                  <div className="text-white/90 text-[11px]">No Ads • No SMS Reading</div>
                 </div>
               </div>
 
@@ -94,7 +94,7 @@ export default function Hero() {
                 <Cloud className="w-5 h-5 text-sky-300 flex-shrink-0" />
                 <div className="text-xs">
                   <div className="font-bold text-white">Google Drive Sync</div>
-                  <div className="text-white/80 text-[11px]">Encrypted Hidden Folder</div>
+                  <div className="text-white/90 text-[11px]">Encrypted Hidden Folder</div>
                 </div>
               </div>
 
@@ -102,7 +102,7 @@ export default function Hero() {
                 <RefreshCw className="w-5 h-5 text-amber-300 flex-shrink-0" />
                 <div className="text-xs">
                   <div className="font-bold text-white">Instant OTA Updates</div>
-                  <div className="text-white/80 text-[11px]">Never Lose Local Data</div>
+                  <div className="text-white/90 text-[11px]">Never Lose Local Data</div>
                 </div>
               </div>
             </div>
@@ -115,31 +115,33 @@ export default function Hero() {
                 download="app-release.apk"
                 rel="noopener noreferrer"
                 onClick={handleDownload}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-coral-600 font-extrabold text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-98 transition-all duration-200 group"
+                aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-coral-700 font-extrabold text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-98 transition-all duration-200 group border border-white/40"
                 id="hero-download-btn"
               >
-                <div className="w-8 h-8 rounded-xl bg-coral-50 flex items-center justify-center text-coral-500 group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 rounded-xl bg-coral-100 flex items-center justify-center text-coral-700 group-hover:scale-110 transition-transform">
                   <Download className="w-5 h-5" />
                 </div>
                 <div className="text-left">
                   <div className="flex items-center gap-1.5 leading-tight">
                     <span>Download Android APK</span>
-                    <span className="text-[10px] bg-coral-500 text-white font-bold px-1.5 py-0.5 rounded">
+                    <span className="text-[10px] bg-coral-700 text-white font-bold px-1.5 py-0.5 rounded">
                       DIRECT
                     </span>
                   </div>
-                  <div className="text-[11px] text-slate-500 font-medium">
+                  <div className="text-[11px] text-slate-600 font-medium">
                     {tagName} • {apkSizeMb} • Android 7.0+
                   </div>
                 </div>
               </a>
 
-              {/* GitHub Button */}
+              {/* GitHub Button (Visually secondary) */}
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-km"
+                href="https://github.com/iamkamleshmali/wallet-manager-app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur-sm border border-white/20 text-white font-bold text-sm transition-all hover:scale-102"
+                aria-label="View Wallet Manager source code on GitHub"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm transition-all hover:scale-102"
               >
                 <GithubIcon className="w-5 h-5" />
                 <span>View on GitHub</span>

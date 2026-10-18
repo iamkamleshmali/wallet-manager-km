@@ -59,7 +59,7 @@ export default function InteractiveShowcase() {
         {/* Tab Buttons & Theme Toggle Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 max-w-4xl mx-auto">
           {/* 4 Tabs */}
-          <div className="flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div className="flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800" role="tablist" aria-label="Showcase screens">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -67,10 +67,13 @@ export default function InteractiveShowcase() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-label={`View ${tab.name} screen`}
+                  className={`min-h-[44px] flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-white dark:bg-slate-800 text-coral-600 dark:text-coral-400 shadow-sm"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-white dark:bg-slate-800 text-coral-700 dark:text-coral-400 shadow-sm"
+                      : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -83,7 +86,8 @@ export default function InteractiveShowcase() {
           {/* In-Mockup Theme Toggle Switcher */}
           <button
             onClick={() => setMockupDarkMode(!mockupDarkMode)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"
+            aria-label={`Toggle phone mockup to ${mockupDarkMode ? "light" : "dark"} mode`}
+            className="min-h-[44px] flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"
           >
             {mockupDarkMode ? (
               <>
@@ -92,7 +96,7 @@ export default function InteractiveShowcase() {
               </>
             ) : (
               <>
-                <Moon className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                <Moon className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                 <span>Phone: Light Mode</span>
               </>
             )}

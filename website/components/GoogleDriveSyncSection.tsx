@@ -21,18 +21,18 @@ export default function GoogleDriveSyncSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider mb-4 border border-sky-500/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-400 text-xs font-bold uppercase tracking-wider mb-4 border border-sky-500/20">
             <Cloud className="w-3.5 h-3.5" />
             WhatsApp-Style Private Backup
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
             Encrypted Google Drive Sync.{" "}
-            <span className="text-sky-500">Zero Middleman Servers.</span>
+            <span className="text-sky-600 dark:text-sky-400">Zero Middleman Servers.</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
             Most finance apps store your bank details on their corporate cloud servers.
             Wallet Manager connects directly to your personal Google Drive using the
-            isolated <code className="font-mono text-xs bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded">drive.appdata</code> sandbox.
+            isolated <code className="font-mono text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-1.5 py-0.5 rounded">drive.appdata</code> sandbox.
           </p>
         </div>
 
@@ -41,20 +41,20 @@ export default function GoogleDriveSyncSection() {
           
           {/* Node 1 */}
           <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative">
-            <div className="w-12 h-12 rounded-2xl bg-coral-500/10 text-coral-600 dark:text-coral-400 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-coral-500/10 text-coral-700 dark:text-coral-400 flex items-center justify-center mb-6">
               <Database className="w-6 h-6" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-coral-600 mb-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-coral-700 dark:text-coral-400 mb-1">
               Step 01 • Local Device
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
               High-Speed SQLite Database
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
               All transactions, categories, and accounts are written instantly to an
               offline SQLite database stored securely inside your phone&apos;s sandboxed app directory.
             </p>
-            <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+            <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-500" />
               <span>100% Offline read/write latency</span>
             </div>
@@ -62,20 +62,20 @@ export default function GoogleDriveSyncSection() {
 
           {/* Node 2 */}
           <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative">
-            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center mb-6">
               <FileKey className="w-6 h-6" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-amber-600 mb-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1">
               Step 02 • Client Encryption
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
               Encrypted Backup Packaging
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
               When syncing or scheduling auto-backups, your SQLite database and receipt photos
               are packaged and encrypted before transmission.
             </p>
-            <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+            <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-500" />
               <span>Zero cleartext data over the wire</span>
             </div>
@@ -83,20 +83,20 @@ export default function GoogleDriveSyncSection() {
 
           {/* Node 3 */}
           <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative">
-            <div className="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-700 dark:text-sky-400 flex items-center justify-center mb-6">
               <Cloud className="w-6 h-6" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-sky-600 mb-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-1">
               Step 03 • Private Cloud
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
               Google Drive AppData Folder
             </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
               Uploaded directly into your personal Google Drive&apos;s hidden app-specific folder.
               Other apps, files, or third-party servers cannot read or touch it.
             </p>
-            <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+            <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-500" />
               <span>1-tap restore on any new phone</span>
             </div>
@@ -108,14 +108,14 @@ export default function GoogleDriveSyncSection() {
         <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold mb-4">
                 <ServerOff className="w-3.5 h-3.5" />
                 Zero Company Servers
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
                 Why does this matter for your privacy?
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
+              <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
                 Commercial finance apps monetize by harvesting your transaction history,
                 reading bank OTP SMS messages, and selling anonymized spending patterns
                 to loan brokers. Wallet Manager runs 100% locally on your phone.

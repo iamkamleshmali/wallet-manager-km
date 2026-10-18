@@ -92,7 +92,7 @@ export default function Footer() {
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km"
+                    href="https://github.com/iamkamleshmali/wallet-manager-app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -103,7 +103,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km/releases"
+                    href="https://github.com/iamkamleshmali/wallet-manager-app/releases"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -114,7 +114,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km/issues"
+                    href="https://github.com/iamkamleshmali/wallet-manager-app/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -157,7 +157,8 @@ export default function Footer() {
                   download="app-release.apk"
                   rel="noopener noreferrer"
                   onClick={() => triggerDownloadConfetti()}
-                  className="mt-3 w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-bold text-xs shadow-md hover:scale-102 transition-all"
+                  aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
+                  className="mt-3 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-bold text-xs shadow-md hover:scale-102 transition-all min-h-[44px]"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download APK</span>

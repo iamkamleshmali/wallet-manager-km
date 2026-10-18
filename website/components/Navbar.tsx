@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo & Brand */}
           <a
-            href="#"
+            href="/"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Wallet Manager Home"
           >
@@ -91,7 +91,7 @@ export default function Navbar() {
                   100% Offline
                 </span>
               </div>
-              <span className={`text-[11px] font-medium leading-none ${isScrolled ? "text-slate-500 dark:text-slate-400" : "text-white/80"}`}>
+              <span className={`text-[11px] font-medium leading-none ${isScrolled ? "text-slate-600 dark:text-slate-400" : "text-white/90"}`}>
                 Double-Entry Money Manager
               </span>
             </div>
@@ -105,8 +105,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-coral-500 ${
                   isScrolled
-                    ? "text-slate-600 dark:text-slate-300"
-                    : "text-white/90 hover:text-white"
+                    ? "text-slate-700 dark:text-slate-200"
+                    : "text-white/95 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -119,9 +119,9 @@ export default function Navbar() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleDarkMode}
-              className={`p-2.5 rounded-xl border transition-colors ${
+              className={`min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-xl border transition-colors ${
                 isScrolled
-                  ? "border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  ? "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
                   : "border-white/20 text-white hover:bg-white/10"
               }`}
               title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
@@ -136,15 +136,16 @@ export default function Navbar() {
 
             {/* GitHub Stars Link */}
             <a
-              href="https://github.com/iamkamleshmali/wallet-manager-km"
+              href="https://github.com/iamkamleshmali/wallet-manager-app"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl border transition-all ${
+              className={`min-h-[44px] flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl border transition-all ${
                 isScrolled
                   ? "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
                   : "border-white/25 text-white hover:bg-white/15"
               }`}
               title="View on GitHub"
+              aria-label="View source code on GitHub"
             >
               <GithubIcon className="w-4 h-4" />
               <span>GitHub</span>
@@ -156,11 +157,12 @@ export default function Navbar() {
               download="app-release.apk"
               rel="noopener noreferrer"
               onClick={() => triggerDownloadConfetti()}
-              className="relative group flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-coral-600 dark:bg-white dark:text-coral-600 font-bold text-xs shadow-md hover:shadow-xl hover:scale-102 active:scale-98 transition-all duration-200"
+              aria-label={`Download Wallet Manager APK ${tagName}`}
+              className="relative group min-h-[44px] flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-coral-700 dark:bg-white dark:text-coral-700 font-bold text-xs shadow-md hover:shadow-xl hover:scale-102 active:scale-98 transition-all duration-200"
             >
-              <Download className="w-4 h-4 text-coral-500 animate-bounce" />
+              <Download className="w-4 h-4 text-coral-600 animate-bounce" />
               <span>Download APK</span>
-              <span className="text-[10px] bg-coral-50 text-coral-700 font-bold px-1.5 py-0.5 rounded-md border border-coral-200">
+              <span className="text-[10px] bg-coral-50 text-coral-800 font-bold px-1.5 py-0.5 rounded-md border border-coral-200">
                 {tagName}
               </span>
             </a>
@@ -170,7 +172,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:hidden">
             <button
               onClick={toggleDarkMode}
-              className={`p-2 rounded-lg border ${
+              className={`min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-xl border ${
                 isScrolled
                   ? "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200"
                   : "border-white/20 text-white"
@@ -185,12 +187,13 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg border ${
+              className={`min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-xl border ${
                 isScrolled
                   ? "border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200"
                   : "border-white/20 text-white"
               }`}
-              aria-label="Toggle menu"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

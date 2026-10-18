@@ -98,7 +98,7 @@ export default function FeatureGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-500/10 text-coral-600 dark:text-coral-400 text-xs font-bold uppercase tracking-wider mb-4 border border-coral-500/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-500/10 text-coral-700 dark:text-coral-400 text-xs font-bold uppercase tracking-wider mb-4 border border-coral-500/20">
             <Sparkles className="w-3.5 h-3.5" />
             Designed for Real Daily Life
           </div>
@@ -108,7 +108,7 @@ export default function FeatureGrid() {
               complete financial control.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
             Inspired by the clean simplicity of classic bookkeeping apps,
             re-engineered for modern Android with zero ads and zero surveillance.
           </p>
@@ -131,7 +131,7 @@ export default function FeatureGrid() {
                     >
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                       {feature.badge}
                     </span>
                   </div>
@@ -140,14 +140,14 @@ export default function FeatureGrid() {
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-coral-500 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Bottom Highlight Strip */}
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
-                  <span className="flex items-center gap-1.5 font-medium text-slate-500 dark:text-slate-400">
+                  <span className="flex items-center gap-1.5 font-medium text-slate-600 dark:text-slate-400">
                     <Check className="w-3.5 h-3.5 text-coral-500" />
                     {feature.highlight}
                   </span>
