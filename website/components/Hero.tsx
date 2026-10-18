@@ -320,7 +320,7 @@ export default function Hero() {
                       <div>
                         <div className="flex items-center gap-1.5">
                           <span className="text-xs font-bold text-slate-900 dark:text-white">Groceries</span>
-                          <span className="flex items-center text-[9px] bg-slate-100 dark:bg-slate-800 text-slate-500 px-1 rounded">
+                          <span className="flex items-center text-[9px] bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-1 rounded">
                             <Camera className="w-2.5 h-2.5 mr-0.5" /> Receipt
                           </span>
                         </div>

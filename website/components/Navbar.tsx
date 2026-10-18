@@ -76,7 +76,6 @@ export default function Navbar() {
           <a
             href="/"
             className="flex items-center gap-3 group focus:outline-none"
-            aria-label="Wallet Manager Home"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-coral-500 to-warmOrange-500 flex items-center justify-center shadow-glow-coral group-hover:scale-105 transition-transform duration-200">
               <Wallet className="w-5 h-5 text-white" />

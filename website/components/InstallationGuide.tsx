@@ -106,7 +106,6 @@ export default function InstallationGuide() {
             download="app-release.apk"
             rel="noopener noreferrer"
             onClick={() => triggerDownloadConfetti()}
-            aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
             className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-coral-500 to-warmOrange-500 hover:from-coral-600 hover:to-warmOrange-600 text-white font-extrabold text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-98 transition-all duration-200"
           >
             <Download className="w-5 h-5" />

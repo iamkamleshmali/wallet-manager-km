@@ -157,7 +157,6 @@ export default function Footer() {
                   download="app-release.apk"
                   rel="noopener noreferrer"
                   onClick={() => triggerDownloadConfetti()}
-                  aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
                   className="mt-3 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-bold text-xs shadow-md hover:scale-102 transition-all min-h-[44px]"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -169,7 +168,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar: Copyright & Credits */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <div>
               © 2026 Wallet Manager. Built by{" "}
               <a

@@ -14,7 +14,6 @@ export default function MobileStickyDownload() {
         download="app-release.apk"
         rel="noopener noreferrer"
         onClick={() => triggerDownloadConfetti()}
-        aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
         className="min-h-[52px] flex items-center justify-between px-5 py-3.5 rounded-2xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-extrabold text-sm shadow-2xl border border-white/20 active:scale-95 transition-transform"
       >
         <div className="flex items-center gap-2.5">
