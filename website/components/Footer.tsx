@@ -52,9 +52,9 @@ export default function Footer() {
 
             {/* Col 3: Navigation */}
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Explore App
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a href="#features" className="hover:text-white transition-colors">
@@ -86,9 +86,9 @@ export default function Footer() {
 
             {/* Col 4: Community & GitHub */}
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Open Source
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a
@@ -143,9 +143,9 @@ export default function Footer() {
 
             {/* Col 5: Direct Download Callout */}
             <div className="space-y-3">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Latest Release
-              </h4>
+              </h3>
               <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80">
                 <div className="text-xs text-slate-400 mb-1">Android Package</div>
                 <div className="font-bold text-white text-sm flex items-center justify-between">

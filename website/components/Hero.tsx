@@ -115,7 +115,6 @@ export default function Hero() {
                 download="app-release.apk"
                 rel="noopener noreferrer"
                 onClick={handleDownload}
-                aria-label={`Download Android APK package (${tagName} • ${apkSizeMb})`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white text-coral-700 font-extrabold text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-98 transition-all duration-200 group border border-white/40"
                 id="hero-download-btn"
               >
@@ -140,7 +139,6 @@ export default function Hero() {
                 href="https://github.com/iamkamleshmali/wallet-manager-app"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View Wallet Manager source code on GitHub"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm transition-all hover:scale-102"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -181,7 +179,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Realistic 3D Mobile Showcase Mockup */}
-          <div className="lg:col-span-5 flex justify-center relative">
+          <div className="lg:col-span-5 flex justify-center relative" aria-hidden="true">
             
             {/* Ambient Background Glow behind phone */}
             <div className="absolute inset-0 bg-coral-400/40 rounded-full blur-3xl transform scale-90" />
