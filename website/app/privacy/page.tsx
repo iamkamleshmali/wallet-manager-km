@@ -9,6 +9,7 @@ import {
   EyeOff,
   ArrowLeft,
   Wallet,
+  Smartphone,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/config";
 
@@ -91,21 +92,35 @@ export default function PrivacyPage() {
             </ul>
           </section>
 
-          {/* 2. No SMS or Contact Scraping */}
-          <section className="space-y-3">
+          {/* 2. Android Device Permissions */}
+          <section className="space-y-4">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <EyeOff className="w-5 h-5 text-coral-600 dark:text-coral-400" />
-              2. Zero SMS Scraping & Minimal Device Permissions
+              <Smartphone className="w-5 h-5 text-coral-600 dark:text-coral-400" />
+              2. Android Device Permissions
             </h2>
             <p>
-              Unlike commercial finance apps, Wallet Manager <strong>never</strong> requests or utilizes invasive Android permissions:
+              Wallet Manager adheres to the principle of least privilege. Every permission declared in our <code>AndroidManifest.xml</code> serves an explicit, user-facing function:
             </p>
-            <ul className="list-disc list-inside space-y-1.5 text-sm pl-2">
-              <li><strong>NO READ_SMS or RECEIVE_SMS:</strong> We do not scan your text messages, bank transaction alerts, or OTPs.</li>
-              <li><strong>NO READ_CONTACTS or LOCATION:</strong> We do not access your address book, phone state, or physical GPS location.</li>
-              <li><strong>Camera / Storage (Optional):</strong> Only requested if you choose to photograph or attach physical paper receipts to your transactions. Receipt photos stay saved locally on your phone.</li>
-              <li><strong>Biometrics (Optional):</strong> Utilizes official Android <code>BiometricPrompt</code> to unlock the app locally via fingerprint or face recognition. Biometric data never leaves hardware-backed secure storage.</li>
+            <ul className="list-disc list-inside space-y-2 text-sm pl-2">
+              <li>
+                <strong>Camera &amp; Photo Storage (<code>CAMERA</code>, <code>READ_MEDIA_IMAGES</code>, <code>READ/WRITE_EXTERNAL_STORAGE</code>):</strong> Used strictly if you choose to attach paper receipt photos to your expense entries. All receipt images remain stored locally on your device.
+              </li>
+              <li>
+                <strong>Daily Reminders &amp; Boot (<code>POST_NOTIFICATIONS</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>VIBRATE</code>):</strong> Used exclusively to deliver scheduled daily ledger reminders locally on your device, persisting reminders after device reboots.
+              </li>
+              <li>
+                <strong>Internet Access (<code>INTERNET</code>):</strong> Used exclusively to communicate directly with Google Drive APIs for encrypted cloud backups (if enabled) and to check the official GitHub Releases API for app updates.
+              </li>
+              <li>
+                <strong>In-App Updates (<code>REQUEST_INSTALL_PACKAGES</code>):</strong> Used strictly by the OTA updater to prompt you to install newly downloaded APK releases with your explicit confirmation.
+              </li>
+              <li>
+                <strong>Biometric Security (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>):</strong> Used to lock and unlock the app via your device&apos;s native hardware-backed <code>BiometricPrompt</code> (Fingerprint / Face Unlock). Biometric templates never leave secure hardware and are never accessible to the app.
+              </li>
             </ul>
+            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-800 dark:text-emerald-300">
+              <strong>Zero Invasive Access:</strong> Wallet Manager <strong>never requests or utilizes</strong> SMS permissions (<code>READ_SMS</code>, <code>RECEIVE_SMS</code>), Contacts permissions (<code>READ_CONTACTS</code>), or Location permissions (<code>ACCESS_FINE_LOCATION</code>). Your private bank SMS alerts, OTPs, and personal communications are completely untouched.
+            </div>
           </section>
 
           {/* 3. Google Drive AppData Sync */}
