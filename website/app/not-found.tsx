@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Wallet, Home, Download, ArrowRight, ShieldCheck } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 export const metadata = {
   title: "404 — Page Not Found | Wallet Manager",
@@ -76,7 +77,7 @@ export default function NotFound() {
             </Link>
             <span>•</span>
             <a
-              href="https://github.com/iamkamleshmali/wallet-manager-app"
+              href={SITE_CONFIG.github.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-slate-900 dark:hover:text-white transition-colors"

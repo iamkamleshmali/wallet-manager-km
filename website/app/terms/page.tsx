@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale, ArrowLeft, Wallet, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions — Wallet Manager",
@@ -142,7 +143,7 @@ export default function TermsPage() {
             </p>
             <p className="pt-2">
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-app/issues"
+                href={SITE_CONFIG.github.issuesUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-bold text-xs hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
@@ -166,7 +167,7 @@ export default function TermsPage() {
               Privacy Policy
             </Link>
             <a
-              href="https://github.com/iamkamleshmali/wallet-manager-app"
+              href={SITE_CONFIG.github.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-slate-900 dark:hover:text-white transition-colors"

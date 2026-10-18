@@ -10,6 +10,7 @@ import {
   ArrowLeft,
   Wallet,
 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Wallet Manager",
@@ -134,7 +135,7 @@ export default function PrivacyPage() {
               Wallet Manager is free and open-source software licensed under the MIT License. The official installation APK packages are built transparently using GitHub Actions and hosted on official GitHub Releases:
             </p>
             <ul className="list-disc list-inside space-y-1.5 text-sm pl-2">
-              <li>Source repository: <a href="https://github.com/iamkamleshmali/wallet-manager-app" target="_blank" rel="noopener noreferrer" className="text-coral-700 dark:text-coral-400 underline font-semibold">github.com/iamkamleshmali/wallet-manager-app</a></li>
+              <li>Source repository: <a href={SITE_CONFIG.github.repoUrl} target="_blank" rel="noopener noreferrer" className="text-coral-700 dark:text-coral-400 underline font-semibold">github.com/{SITE_CONFIG.github.owner}/{SITE_CONFIG.github.repo}</a></li>
               <li>The landing page fetches latest release tags and package sizes directly from the public GitHub Releases API.</li>
               <li>Anyone is free to audit the source code, verify dependencies, or build the APK directly from source.</li>
             </ul>
@@ -175,7 +176,7 @@ export default function PrivacyPage() {
             </p>
             <p className="pt-2">
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-app/issues"
+                href={SITE_CONFIG.github.issuesUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-bold text-xs hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
@@ -199,7 +200,7 @@ export default function PrivacyPage() {
               Terms & Conditions
             </Link>
             <a
-              href="https://github.com/iamkamleshmali/wallet-manager-app"
+              href={SITE_CONFIG.github.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-slate-900 dark:hover:text-white transition-colors"

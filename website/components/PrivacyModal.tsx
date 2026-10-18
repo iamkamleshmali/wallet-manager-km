@@ -1,6 +1,7 @@
 "use client";
 
 import { X, ShieldCheck, Lock, Database } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/config";
 
 interface PrivacyModalProps {
   isOpen: boolean;
@@ -71,7 +72,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
             4. Open-Source Transparency
           </h4>
           <p>
-            The complete source code is public on GitHub under the repository <code className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">iamkamleshmali/wallet-manager-km</code> for community audit.
+            The complete source code is public on GitHub under the repository <code className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">{SITE_CONFIG.github.owner}/{SITE_CONFIG.github.repo}</code> for community audit.
           </p>
         </div>
 

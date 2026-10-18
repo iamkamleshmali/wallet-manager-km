@@ -14,6 +14,7 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { useGitHubRelease } from "@/hooks/useGitHubRelease";
 import { triggerDownloadConfetti } from "@/lib/confetti";
+import { SITE_CONFIG } from "@/lib/config";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -135,7 +136,7 @@ export default function Navbar() {
 
             {/* GitHub Stars Link */}
             <a
-              href="https://github.com/iamkamleshmali/wallet-manager-app"
+              href={SITE_CONFIG.github.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={`min-h-[44px] flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl border transition-all ${
@@ -228,7 +229,7 @@ export default function Navbar() {
                   <span>Download APK ({tagName} • {apkSizeMb})</span>
                 </a>
                 <a
-                  href="https://github.com/iamkamleshmali/wallet-manager-km"
+                  href={SITE_CONFIG.github.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs"

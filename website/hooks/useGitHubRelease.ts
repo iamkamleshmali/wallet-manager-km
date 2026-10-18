@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { SITE_CONFIG } from "@/lib/config";
 
 export interface GitHubReleaseInfo {
   tagName: string;
@@ -17,19 +18,16 @@ export interface GitHubReleaseInfo {
   isFallback: boolean;
 }
 
-const GITHUB_OWNER = "iamkamleshmali";
-const GITHUB_REPO = "wallet-manager-app";
-
 const DEFAULT_RELEASE: GitHubReleaseInfo = {
   tagName: "Latest",
   releaseName: "Wallet Manager — Double-Entry Ledger & Cloud Sync",
   publishedAt: "Latest Stable",
-  apkUrl: `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest/download/app-release.apk`,
+  apkUrl: SITE_CONFIG.github.latestApkDownloadUrl,
   apkName: "app-release.apk",
   apkSizeMb: "~30 MB",
   totalDownloads: 0,
   releaseNotes: "• Encrypted Google Drive AppData sync\n• SQLite local database export & import\n• Reinforced multi-account balance sheets\n• High-performance interactive donut statistics",
-  htmlUrl: `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest`,
+  htmlUrl: SITE_CONFIG.github.latestReleaseUrl,
   isLoading: false,
   isError: false,
   isFallback: true,
@@ -47,7 +45,7 @@ export function useGitHubRelease() {
     async function fetchRelease() {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest`,
+          SITE_CONFIG.github.latestReleaseApiUrl,
           {
             headers: {
               Accept: "application/vnd.github.v3+json",
@@ -92,7 +90,7 @@ export function useGitHubRelease() {
         const assetName = apkAsset?.name || "app-release.apk";
         const directApkUrl =
           apkAsset?.browser_download_url ||
-          `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/releases/latest/download/${assetName}`;
+          `${SITE_CONFIG.github.releasesUrl}/latest/download/${assetName}`;
 
         setRelease({
           tagName: tagName,

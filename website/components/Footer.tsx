@@ -13,6 +13,7 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { useGitHubRelease } from "@/hooks/useGitHubRelease";
 import { triggerDownloadConfetti } from "@/lib/confetti";
+import { SITE_CONFIG } from "@/lib/config";
 
 export default function Footer() {
   const { tagName, apkUrl, apkSizeMb } = useGitHubRelease();
@@ -92,7 +93,7 @@ export default function Footer() {
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-app"
+                    href={SITE_CONFIG.github.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -103,7 +104,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-app/releases"
+                    href={SITE_CONFIG.github.releasesUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -114,7 +115,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-app/issues"
+                    href={SITE_CONFIG.github.issuesUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -172,7 +173,7 @@ export default function Footer() {
             <div>
               © 2026 Wallet Manager. Built by{" "}
               <a
-                href="https://github.com/iamkamleshmali"
+                href={SITE_CONFIG.github.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-coral-400 hover:underline font-semibold"
@@ -196,7 +197,7 @@ export default function Footer() {
                 Terms
               </Link>
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-app"
+                href={SITE_CONFIG.github.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-slate-300 transition-colors"

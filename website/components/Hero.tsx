@@ -23,6 +23,7 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { useGitHubRelease } from "@/hooks/useGitHubRelease";
 import { triggerDownloadConfetti } from "@/lib/confetti";
+import { SITE_CONFIG } from "@/lib/config";
 
 export default function Hero() {
   const { tagName, apkUrl, apkSizeMb, totalDownloads, publishedAt, isFallback } =
@@ -136,7 +137,7 @@ export default function Hero() {
 
               {/* GitHub Button (Visually secondary) */}
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-app"
+                href={SITE_CONFIG.github.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm transition-all hover:scale-102"
