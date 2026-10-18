@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Wallet,
   Download,
@@ -12,10 +13,9 @@ import {
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { useGitHubRelease } from "@/hooks/useGitHubRelease";
 import { triggerDownloadConfetti } from "@/lib/confetti";
-import PrivacyModal from "@/components/PrivacyModal";
+import { SITE_CONFIG } from "@/lib/config";
 
 export default function Footer() {
-  const [privacyOpen, setPrivacyOpen] = useState(false);
   const { tagName, apkUrl, apkSizeMb } = useGitHubRelease();
 
   return (
@@ -53,9 +53,9 @@ export default function Footer() {
 
             {/* Col 3: Navigation */}
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Explore App
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a href="#features" className="hover:text-white transition-colors">
@@ -87,13 +87,13 @@ export default function Footer() {
 
             {/* Col 4: Community & GitHub */}
             <div>
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Open Source
-              </h4>
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km"
+                    href={SITE_CONFIG.github.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -104,7 +104,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km/releases"
+                    href={SITE_CONFIG.github.releasesUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -115,7 +115,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/iamkamleshmali/wallet-manager-km/issues"
+                    href={SITE_CONFIG.github.issuesUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
@@ -124,21 +124,29 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => setPrivacyOpen(true)}
-                    className="hover:text-white transition-colors text-left"
+                  <Link
+                    href="/privacy"
+                    className="hover:text-white transition-colors"
                   >
                     Privacy Policy
-                  </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-white transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
                 </li>
               </ul>
             </div>
 
             {/* Col 5: Direct Download Callout */}
             <div className="space-y-3">
-              <h4 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-white mb-4">
                 Latest Release
-              </h4>
+              </h3>
               <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80">
                 <div className="text-xs text-slate-400 mb-1">Android Package</div>
                 <div className="font-bold text-white text-sm flex items-center justify-between">
@@ -150,7 +158,7 @@ export default function Footer() {
                   download="app-release.apk"
                   rel="noopener noreferrer"
                   onClick={() => triggerDownloadConfetti()}
-                  className="mt-3 w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-bold text-xs shadow-md hover:scale-102 transition-all"
+                  className="mt-3 w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-coral-500 to-warmOrange-500 text-white font-bold text-xs shadow-md hover:scale-102 transition-all min-h-[44px]"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download APK</span>
@@ -161,11 +169,11 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar: Copyright & Credits */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <div>
               © 2026 Wallet Manager. Built by{" "}
               <a
-                href="https://github.com/iamkamleshmali"
+                href={SITE_CONFIG.github.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-coral-400 hover:underline font-semibold"
@@ -176,14 +184,20 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-6">
-              <button
-                onClick={() => setPrivacyOpen(true)}
+              <Link
+                href="/privacy"
                 className="hover:text-slate-300 transition-colors"
               >
-                Privacy
-              </button>
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-slate-300 transition-colors"
+              >
+                Terms
+              </Link>
               <a
-                href="https://github.com/iamkamleshmali/wallet-manager-km"
+                href={SITE_CONFIG.github.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-slate-300 transition-colors"
@@ -197,9 +211,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
-      {/* Privacy Policy Modal */}
-      <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </>
   );
 }

@@ -71,16 +71,19 @@ export default function FaqSection() {
                 className="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#FAFAFC] dark:bg-slate-900/60 overflow-hidden transition-colors"
               >
                 <button
+                  id={`faq-btn-${index}`}
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                  className="w-full min-h-[52px] px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  aria-label={`Toggle answer for: ${faq.question}`}
                 >
                   <span className="font-bold text-base sm:text-lg text-slate-900 dark:text-white">
                     {faq.question}
                   </span>
                   <div
                     className={`w-7 h-7 rounded-full bg-slate-200/60 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 bg-coral-500 text-white dark:bg-coral-500" : "text-slate-600 dark:text-slate-300"
+                      isOpen ? "rotate-180 bg-coral-600 text-white dark:bg-coral-500" : "text-slate-700 dark:text-slate-300"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -88,7 +91,12 @@ export default function FaqSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-5 pt-1 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 animate-in fade-in duration-200">
+                  <div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-btn-${index}`}
+                    className="px-6 pb-5 pt-1 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 animate-in fade-in duration-200"
+                  >
                     {faq.answer}
                   </div>
                 )}

@@ -21,7 +21,7 @@ export default function InstallationGuide() {
       title: "Download the APK File",
       description:
         "Click the 'Download Android APK' button. The official .apk package will be fetched directly from GitHub Releases.",
-      tip: "File size is only ~24.6 MB. Look for the download notification in your browser tray.",
+      tip: `File size is only ${apkSizeMb}. Look for the download notification in your browser tray.`,
       actionText: "Download APK",
       isDownload: true,
     },
@@ -51,7 +51,7 @@ export default function InstallationGuide() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-500/10 text-coral-600 dark:text-coral-400 text-xs font-bold uppercase tracking-wider mb-4 border border-coral-500/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-500/10 text-coral-700 dark:text-coral-400 text-xs font-bold uppercase tracking-wider mb-4 border border-coral-500/20">
             <Smartphone className="w-3.5 h-3.5" />
             Quick Setup Walkthrough
           </div>
@@ -61,7 +61,7 @@ export default function InstallationGuide() {
               any Android device.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
             Android allows direct app installations without relying on app stores.
             Follow these 3 easy steps to install Wallet Manager in less than a minute.
           </p>
@@ -79,19 +79,19 @@ export default function InstallationGuide() {
                   <span className="text-3xl font-black bg-gradient-to-r from-coral-500 to-warmOrange-500 bg-clip-text text-transparent">
                     {step.num}
                   </span>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                     {step.actionText}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
                   {step.title}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
                   {step.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs font-medium text-slate-500 dark:text-slate-400 flex items-start gap-2 bg-slate-50/70 dark:bg-slate-800/40 p-3 rounded-2xl">
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-start gap-2 bg-slate-50/70 dark:bg-slate-800/40 p-3 rounded-2xl">
                 <HelpCircle className="w-4 h-4 text-coral-500 flex-shrink-0 mt-0.5" />
                 <span>{step.tip}</span>
               </div>

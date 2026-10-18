@@ -1,0 +1,21 @@
+{
+  "name": "Wallet Manager",
+  "short_name": "Wallet Manager",
+  "description": "Double-entry bookkeeping, visual charts, receipt storage, and encrypted Google Drive sync. Offline-first, 100% private Android app.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F17",
+  "theme_color": "#FF5E57",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

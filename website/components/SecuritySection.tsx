@@ -31,10 +31,10 @@ export default function SecuritySection() {
     },
     {
       icon: Radio,
-      title: "Zero Ads & Zero Telemetry",
+      title: "Zero In-App Ads & Telemetry",
       description:
-        "No ad SDKs, no behavioral trackers, and no background analytics pinging third-party data brokers. Clean, fast, battery-efficient operation.",
-      badge: "No Google / Meta Pixel",
+        "The Android app contains zero ad SDKs, zero trackers, and zero telemetry. The website uses only privacy-friendly, cookie-free aggregated page-view metrics.",
+      badge: "100% In-App Tracker-Free",
       color: "from-blue-500 to-indigo-500",
     },
     {
@@ -53,7 +53,7 @@ export default function SecuritySection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/20">
             <Lock className="w-3.5 h-3.5" />
             Security & Privacy by Design
           </div>
@@ -63,7 +63,7 @@ export default function SecuritySection() {
               nobody else&apos;s business.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
             Unlike venture-backed apps that monetize your transaction data, Wallet Manager
             is built on the core principle that financial data must remain strictly confidential.
           </p>
@@ -91,7 +91,7 @@ export default function SecuritySection() {
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>

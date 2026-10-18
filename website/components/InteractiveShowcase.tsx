@@ -59,7 +59,7 @@ export default function InteractiveShowcase() {
         {/* Tab Buttons & Theme Toggle Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 max-w-4xl mx-auto">
           {/* 4 Tabs */}
-          <div className="flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div className="flex flex-wrap items-center justify-center p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800" role="tablist" aria-label="Showcase screens">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -67,10 +67,13 @@ export default function InteractiveShowcase() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-label={`View ${tab.name} screen`}
+                  className={`min-h-[44px] flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-white dark:bg-slate-800 text-coral-600 dark:text-coral-400 shadow-sm"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-white dark:bg-slate-800 text-coral-700 dark:text-coral-400 shadow-sm"
+                      : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -83,7 +86,7 @@ export default function InteractiveShowcase() {
           {/* In-Mockup Theme Toggle Switcher */}
           <button
             onClick={() => setMockupDarkMode(!mockupDarkMode)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"
+            className="min-h-[44px] flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"
           >
             {mockupDarkMode ? (
               <>
@@ -92,7 +95,7 @@ export default function InteractiveShowcase() {
               </>
             ) : (
               <>
-                <Moon className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                <Moon className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                 <span>Phone: Light Mode</span>
               </>
             )}
@@ -106,13 +109,13 @@ export default function InteractiveShowcase() {
           <div className="lg:col-span-6 space-y-6 order-2 lg:order-1">
             {activeTab === "trans" && (
               <div className="space-y-4 animate-in fade-in duration-300">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-coral-50 text-coral-600 border border-coral-200">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-coral-50 text-coral-800 border border-coral-200">
                   Core View 01 • Daily Ledger
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                   Realtime Daily Ledger with Balance Breakdown
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   Every entry tracks payment method (Cash, HDFC UPI, Credit Card),
                   photo receipt proof, sub-category tags, and timestamp. The top
                   summary instantly recalculates Income, Expense, and remaining Cash Flow for the month.
@@ -136,13 +139,13 @@ export default function InteractiveShowcase() {
 
             {activeTab === "stats" && (
               <div className="space-y-4 animate-in fade-in duration-300">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
                   Core View 02 • Statistics & Analytics
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                   Fluid Donut Pie Charts & Category Rankings
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   See exactly where your money leaks. Wallet Manager categorizes your
                   expenditures into percentage shares and ranks categories by total spend,
                   making it effortless to trim excess expenses.
@@ -166,13 +169,13 @@ export default function InteractiveShowcase() {
 
             {activeTab === "accounts" && (
               <div className="space-y-4 animate-in fade-in duration-300">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200">
                   Core View 03 • Accounts & Balance Sheet
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                   Assets vs Liabilities Double-Entry Tracking
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   Manage multiple bank accounts, UPI handles, wallets, and credit cards
                   under a single roof. Transfers between accounts don&apos;t skew your expenses,
                   and your true Net Worth is calculated accurately in real time.
@@ -196,13 +199,13 @@ export default function InteractiveShowcase() {
 
             {activeTab === "calc" && (
               <div className="space-y-4 animate-in fade-in duration-300">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-200">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-800 border border-purple-200">
                   Core View 04 • CalcBox & Fast Entry
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                   Built-in Numeric CalcBox for Instant Logging
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   No need to open a separate calculator app when splitting a dining bill or
                   calculating discounts. CalcBox provides arithmetic operators directly
                   inside the expense input keyboard with instant evaluation.
@@ -226,7 +229,7 @@ export default function InteractiveShowcase() {
           </div>
 
           {/* Right Column: Smartphone Chassis with Live View Switch */}
-          <div className="lg:col-span-6 flex justify-center order-1 lg:order-2">
+          <div className="lg:col-span-6 flex justify-center order-1 lg:order-2" aria-hidden="true">
             <div className="relative w-[310px] sm:w-[335px] rounded-[48px] p-3.5 bg-slate-950 shadow-2xl border-4 border-slate-800">
               
               {/* Dynamic Island */}
@@ -283,10 +286,10 @@ export default function InteractiveShowcase() {
 
                     {/* Filter chips */}
                     <div className="flex gap-1.5 px-3 py-2 border-b text-[10px] font-bold border-slate-100 dark:border-slate-800">
-                      <span className="px-2 py-0.5 rounded-full bg-coral-500 text-white">All</span>
-                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Cash</span>
-                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Bank UPI</span>
-                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Card</span>
+                      <span className="px-2 py-0.5 rounded-full bg-coral-700 text-white">All</span>
+                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Cash</span>
+                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Bank UPI</span>
+                      <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Card</span>
                     </div>
 
                     {/* Entries */}
