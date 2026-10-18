@@ -72,7 +72,7 @@ export default function PrivacyPage() {
               Summary of Our Privacy Commitments
             </h2>
             <p className="text-sm text-slate-600 dark:text-slate-300">
-              Wallet Manager is an <strong>offline-first, zero-telemetry Android application</strong> designed from the ground up so that your personal financial records never touch our servers. We have no user accounts, no login portals, no tracking cookies, no advertising SDKs, and zero bank SMS scraping.
+              The <strong>Wallet Manager Android application</strong> is 100% offline-first with zero telemetry, zero in-app analytics, zero advertising SDKs, and zero bank SMS scraping. Your financial records never leave your device unless you choose to sync them directly to your personal Google Drive. The <strong>showcase website</strong> uses zero cookies and only anonymous, privacy-friendly aggregated page-view analytics.
             </p>
           </section>
 

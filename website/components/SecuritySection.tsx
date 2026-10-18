@@ -31,10 +31,10 @@ export default function SecuritySection() {
     },
     {
       icon: Radio,
-      title: "Zero Ads & Zero Telemetry",
+      title: "Zero In-App Ads & Telemetry",
       description:
-        "No ad SDKs, no behavioral trackers, and no background analytics pinging third-party data brokers. Clean, fast, battery-efficient operation.",
-      badge: "No Google / Meta Pixel",
+        "The Android app contains zero ad SDKs, zero trackers, and zero telemetry. The website uses only privacy-friendly, cookie-free aggregated page-view metrics.",
+      badge: "100% In-App Tracker-Free",
       color: "from-blue-500 to-indigo-500",
     },
     {

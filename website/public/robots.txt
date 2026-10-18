@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://wallet-manager-km.vercel.app/sitemap.xml
